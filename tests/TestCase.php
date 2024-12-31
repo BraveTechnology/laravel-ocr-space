@@ -1,10 +1,11 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Tdwesten\OcrSpace\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Http;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use Tdwesten\OcrSpace\OcrSpaceServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,24 +14,28 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName): string => 'Tdwesten\\OcrSpace\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
+
+        Http::fake([
+            'https://api.ocr.space/parse/image' => function () {
+                $testResponse = fopen(__DIR__.'/stubs/test-response.json', 'r');
+
+                return Http::response($testResponse);
+            },
+        ]);
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            OcrSpaceServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
         config()->set('database.default', 'testing');
-
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
-        $migration->up();
-        */
+        config()->set('ocr-space.api_key', '798f2847dd88957');
     }
 }
