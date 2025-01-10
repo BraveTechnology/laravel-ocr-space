@@ -1,6 +1,6 @@
 {
     "name": "tdwesten/laravel-ocr-space",
-    "description": "A Laravel package for interacting with the https://ocr.space API ",
+    "description": "OCR PDF's and images with the OCR.Space API from Laravel",
     "version": "1.0.0",
     "keywords": [
         "Thomas van der Westen",
@@ -17,9 +17,7 @@
         }
     ],
     "require": {
-        "php": "^8.2",
-        "spatie/laravel-package-tools": "^1.16",
-        "illuminate/contracts": "^10.0||^11.0"
+        "php": "^8.2"
     },
     "require-dev": {
         "laravel/laravel": "^11.2",
@@ -29,6 +27,7 @@
         "pestphp/pest": "^3.0",
         "pestphp/pest-plugin-arch": "^3.0",
         "pestphp/pest-plugin-laravel": "^3.0",
+        "pestphp/pest-plugin-type-coverage": "^3.2",
         "phpstan/phpstan": "^1.12",
         "rector/rector": "^1.2",
         "spatie/laravel-ray": "^1.35"

@@ -11,40 +11,26 @@ use Tdwesten\OcrSpace\ValueObjects\OcrSpaceResponse;
 
 class OcrSpace
 {
-    public function getApiKey(): string
-    {
-        return $this->getConfigValue('api_key');
-    }
-
-    public function getApiUrl(): string
-    {
-        return $this->getConfigValue('api_url');
-    }
-
-    public function getConfigValue(string $key): string
-    {
-        $key = sprintf('ocr-space.%s', $key);
-        $value = config($key);
-
-        if (empty($value)) {
-            throw new \Exception(sprintf('OCR Space config value for key "%s" is not set.', $key));
-        }
-
-        if (! is_string($value)) {
-            throw new \Exception(sprintf('OCR Space config value for key "%s" must be a string.', $key));
-        }
-
-        return $value;
-    }
-
     public function parseImage(
         InputType $inputType,
         string $filePath,
         OcrSpaceOptions $options
     ): OcrSpaceResponse {
+
+        /**
+         * @var int $timeout The request timeout
+         */
+        $timeout = config('ocr-space.timeout');
+
+        /**
+         * @var string $url The request URL
+         */
+        $url = config('ocr-space.api_url');
+
         $client = Http::asMultipart();
+        $client->timeout($timeout);
         $client->withHeaders([
-            'apikey' => $this->getApiKey(),
+            'apikey' => config('ocr-space.api_key'),
         ]);
 
         $mimeType = $options->fileType ?? false;
@@ -54,7 +40,7 @@ class OcrSpace
             ...$options->toArray(),
         ];
 
-        $response = $client->post($this->getApiUrl(), $data);
+        $response = $client->post($url, $data);
 
         /**
          * @var array{
@@ -88,6 +74,14 @@ class OcrSpace
          * } $data The response data
          */
         $data = $response->json();
+
+        if ($data['IsErroredOnProcessing']) {
+            if (is_array($data['ErrorMessage'])) {
+                throw new InvalidRequestException($data['ErrorMessage'][0]);
+            }
+
+            throw new InvalidRequestException('An error occurred while processing the image.');
+        }
 
         $result = OcrSpaceResponse::fromResponse($data);
 
@@ -166,6 +160,10 @@ class OcrSpace
 
     public function parseImageBase64(string $base64, OcrSpaceOptions $options): OcrSpaceResponse
     {
+        if ($options->fileType === null) {
+            throw new \Exception('The file type is required for base64 images in the OcrSpaceOptions.');
+        }
+
         return $this->parseImage(InputType::Base64, 'data:'.$options->fileType.';base64,'.$base64, $options);
     }
 

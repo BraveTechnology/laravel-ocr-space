@@ -2,20 +2,28 @@
 
 namespace Tdwesten\OcrSpace;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class OcrSpaceServiceProvider extends PackageServiceProvider
+class OcrSpaceServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    /**
+     * Register the application services.
+     */
+    public function register(): void
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel-ocr-space')
-            ->hasConfigFile('ocr-space');
+        $this->mergeConfigFrom(__DIR__.'/../config/ocr-space.php', 'ocr-space');
+    }
+
+    /**
+     * Bootstrap the application services.
+     */
+    public function boot(): void
+    {
+        // Publish the config file.
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/ocr-space.php' => config_path('ocr-space.php'),
+            ], 'laravel-ocr-space');
+        }
     }
 }

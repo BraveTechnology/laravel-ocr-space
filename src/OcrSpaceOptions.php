@@ -21,6 +21,11 @@ class OcrSpaceOptions
         public ?Language $language = null,
     ) {}
 
+    public static function make(): self
+    {
+        return new self;
+    }
+
     /**
      * Transform the options to an array.
      *
