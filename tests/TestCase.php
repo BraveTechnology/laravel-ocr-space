@@ -19,7 +19,7 @@ class TestCase extends Orchestra
 
         Http::fake([
             'https://api.ocr.space/parse/image' => function () {
-                $testResponse = fopen(__DIR__.'/stubs/test-response.json', 'r');
+                $testResponse = fopen(__DIR__.'/Fixtures/test-response.json', 'r');
 
                 return Http::response($testResponse);
             },

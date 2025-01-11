@@ -1,7 +1,7 @@
 <?php
 
 it('parses an image file', function (): void {
-    $filePath = __DIR__.'/../Stubs/test-image.png';
+    $filePath = __DIR__.'/../Fixtures/test-image.png';
     $service = new \Tdwesten\OcrSpace\OcrSpace;
     $options = new \Tdwesten\OcrSpace\OcrSpaceOptions;
 
@@ -17,7 +17,7 @@ it('parses an image file', function (): void {
 });
 
 it('parses a binary image', function (): void {
-    $filePath = __DIR__.'/../Stubs/test-image.png';
+    $filePath = __DIR__.'/../Fixtures/test-image.png';
     $service = new \Tdwesten\OcrSpace\OcrSpace;
     $options = new \Tdwesten\OcrSpace\OcrSpaceOptions;
     $options = $options->fileType('image/png');
@@ -33,7 +33,7 @@ it('parses a binary image', function (): void {
 });
 
 it('parses a base64 image', function (): void {
-    $filePath = __DIR__.'/../Stubs/test-image.png';
+    $filePath = __DIR__.'/../Fixtures/test-image.png';
     $service = new \Tdwesten\OcrSpace\OcrSpace;
     $options = new \Tdwesten\OcrSpace\OcrSpaceOptions;
     $options = $options->fileType('image/png');
