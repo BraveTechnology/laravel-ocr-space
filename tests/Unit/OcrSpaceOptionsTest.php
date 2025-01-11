@@ -1,11 +1,11 @@
 <?php
 
-use Tdwesten\OcrSpace\Enums\Language;
-use Tdwesten\OcrSpace\Enums\OcrSpaceEngine;
+use Codesmiths\LaravelOcrSpace\Enums\Language;
+use Codesmiths\LaravelOcrSpace\Enums\OcrSpaceEngine;
 
 it('can be tranformed to array', function (): void {
 
-    $options = new \Tdwesten\OcrSpace\OcrSpaceOptions(
+    $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions(
         overlayRequired: true,
         fileType: 'image/png',
         isTable: true,
@@ -58,7 +58,7 @@ it('can be tranformed to array', function (): void {
 });
 
 it('can be tranformed to array with null values', function (): void {
-    $options = new \Tdwesten\OcrSpace\OcrSpaceOptions;
+    $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
 
     expect($options->toArray())->toBe([
         [
@@ -89,7 +89,7 @@ it('can be tranformed to array with null values', function (): void {
 });
 
 it('can set options', function (): void {
-    $options = new \Tdwesten\OcrSpace\OcrSpaceOptions;
+    $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
 
     $options->language(Language::English);
     $options->overlayRequired(true);

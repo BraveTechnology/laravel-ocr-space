@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tdwesten\OcrSpace;
+namespace Codesmiths\LaravelOcrSpace;
 
+use Codesmiths\LaravelOcrSpace\Enums\InputType;
+use Codesmiths\LaravelOcrSpace\Exceptions\InvalidRequestException;
+use Codesmiths\LaravelOcrSpace\ValueObjects\OcrSpaceResponse;
 use Illuminate\Support\Facades\Http;
-use Tdwesten\OcrSpace\Enums\InputType;
-use Tdwesten\OcrSpace\Exceptions\InvalidRequestException;
-use Tdwesten\OcrSpace\ValueObjects\OcrSpaceResponse;
 
 class OcrSpace
 {

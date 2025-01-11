@@ -1,6 +1,6 @@
 <?php
 
-namespace Tdwesten\OcrSpace\Enums;
+namespace Codesmiths\LaravelOcrSpace\Enums;
 
 enum OcrSpaceEngine: string
 {

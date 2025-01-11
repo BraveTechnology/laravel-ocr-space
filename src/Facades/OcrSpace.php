@@ -1,11 +1,11 @@
 <?php
 
-namespace Tdwesten\OcrSpace\Facades;
+namespace Codesmiths\LaravelOcrSpace\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Tdwesten\OcrSpace\OcrSpace
+ * @see \Codesmiths\LaravelOcrSpace\OcrSpace
  *
  *  */
 class OcrSpace extends Facade
@@ -15,6 +15,6 @@ class OcrSpace extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return \Tdwesten\OcrSpace\OcrSpace::class;
+        return \Codesmiths\LaravelOcrSpace\OcrSpace::class;
     }
 }

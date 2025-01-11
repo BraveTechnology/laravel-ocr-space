@@ -1,6 +1,6 @@
 <?php
 
-namespace Tdwesten\OcrSpace;
+namespace Codesmiths\LaravelOcrSpace;
 
 use Illuminate\Support\ServiceProvider;
 

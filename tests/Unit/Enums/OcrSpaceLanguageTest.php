@@ -1,6 +1,6 @@
 <?php
 
-use Tdwesten\OcrSpace\Enums\Language;
+use Codesmiths\LaravelOcrSpace\Enums\Language;
 
 it('can parse a language', function (): void {
     $language = Language::from('eng');

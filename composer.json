@@ -1,18 +1,21 @@
 {
-    "name": "tdwesten/laravel-ocr-space",
+    "name": "cdsmths/laravel-ocr-space",
     "description": "OCR PDF's and images with the OCR.Space API from Laravel",
     "version": "1.0.0",
     "keywords": [
-        "Thomas van der Westen",
         "laravel",
-        "laravel-ocr-space"
+        "laravel-ocr-space",
+        "ocr",
+        "ocr.space",
+        "Codesmiths",
+        "Thomas van der Westen"
     ],
-    "homepage": "https://github.com/tdwesten/laravel-ocr-space",
+    "homepage": "https://github.com/cdsmths/laravel-ocr-space",
     "license": "MIT",
     "authors": [
         {
             "name": "Thomas van der Westen",
-            "email": "post@thomasvanderwesten.nl",
+            "email": "info@cdsmths.nl",
             "role": "Developer"
         }
     ],
@@ -34,13 +37,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Tdwesten\\OcrSpace\\": "src/",
-            "Tdwesten\\OcrSpace\\Database\\Factories\\": "database/factories/"
+            "Codesmiths\\LaravelOcrSpace\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tdwesten\\OcrSpace\\Tests\\": "tests/",
+            "Codesmiths\\LaravelOcrSpace\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
@@ -83,10 +85,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Tdwesten\\OcrSpace\\OcrSpaceServiceProvider"
+                "Codesmiths\\LaravelOcrSpace\\LaravelOcrSpaceServiceProvider"
             ],
             "aliases": {
-                "OcrSpace": "Tdwesten\\OcrSpace\\Facades\\OcrSpace"
+                "OcrSpace": "Codesmiths\\LaravelOcrSpace\\Facades\\LaravelOcrSpace"
             }
         }
     },

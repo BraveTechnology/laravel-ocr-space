@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Tdwesten\OcrSpace;
+namespace Codesmiths\LaravelOcrSpace;
 
-use Tdwesten\OcrSpace\Enums\Language;
-use Tdwesten\OcrSpace\Enums\OcrSpaceEngine;
+use Codesmiths\LaravelOcrSpace\Enums\Language;
+use Codesmiths\LaravelOcrSpace\Enums\OcrSpaceEngine;
 
 class OcrSpaceOptions
 {

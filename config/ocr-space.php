@@ -1,6 +1,5 @@
 <?php
 
-// config for Thomas Van Der Westen/OcrSpace
 return [
     /**
      * ---------------------------------------------------------------

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tdwesten\OcrSpace\ValueObjects;
+namespace Codesmiths\LaravelOcrSpace\ValueObjects;
 
 class Word
 {

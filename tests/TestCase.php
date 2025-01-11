@@ -1,11 +1,11 @@
 <?php
 
-namespace Tdwesten\OcrSpace\Tests;
+namespace Codesmiths\LaravelOcrSpace\Tests;
 
+use Codesmiths\LaravelOcrSpace\OcrSpaceServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Http;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Tdwesten\OcrSpace\OcrSpaceServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -14,7 +14,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName): string => 'Tdwesten\\OcrSpace\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName): string => 'Codesmiths\\LaravelOcrSpace\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
 
         Http::fake([

@@ -1,6 +1,6 @@
 <?php
 
-namespace Tdwesten\OcrSpace\Exceptions;
+namespace Codesmiths\LaravelOcrSpace\Exceptions;
 
 use Exception;
 
