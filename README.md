@@ -18,7 +18,7 @@ php artisan vendor:publish --provider="Codesmiths\LaravelOcrSpace\LaravelOcrSpac
 
 ## Usage
 
-### Get a Ocr.Space api key
+### Get a free Ocr.Space api key
 
 You can get a free api key from [ocr.space](https://ocr.space/ocrapi/freekey). This key is required to use the package.
 
