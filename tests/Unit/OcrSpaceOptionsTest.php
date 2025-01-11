@@ -89,17 +89,16 @@ it('can be tranformed to array with null values', function (): void {
 });
 
 it('can set options', function (): void {
-    $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-
-    $options->language(Language::English);
-    $options->overlayRequired(true);
-    $options->fileType('application/pdf');
-    $options->detectOrientation(true);
-    $options->isCreateSearchablePdf(true);
-    $options->isSearchablePdfHideTextLayer(true);
-    $options->scale(true);
-    $options->isTable(true);
-    $options->OCREngine(OcrSpaceEngine::Engine1);
+    $options = \Codesmiths\LaravelOcrSpace\OcrSpaceOptions::make()
+        ->language(Language::English)
+        ->overlayRequired(true)
+        ->fileType('image/png')
+        ->detectOrientation(true)
+        ->isCreateSearchablePdf(true)
+        ->isSearchablePdfHideTextLayer(true)
+        ->scale(true)
+        ->isTable(true)
+        ->OCREngine(OcrSpaceEngine::Engine1);
 
     expect($options->toArray())->toBe([
         [
@@ -112,7 +111,7 @@ it('can set options', function (): void {
         ],
         [
             'name' => 'filetype',
-            'contents' => 'application/pdf',
+            'contents' => 'image/png',
         ],
         [
             'name' => 'detectOrientation',

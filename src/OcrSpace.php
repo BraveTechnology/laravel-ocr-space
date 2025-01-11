@@ -149,16 +149,16 @@ class OcrSpace
         return $this->parseImage(InputType::File, $filePath, $options);
     }
 
-    public function parseImageBinary(string $binary, OcrSpaceOptions $options): OcrSpaceResponse
+    public function parseBinaryImage(string $binary, OcrSpaceOptions $options): OcrSpaceResponse
     {
         if ($options->fileType === null) {
             throw new \Exception('The file type is required for binary images in the options.');
         }
 
-        return $this->parseImageBase64(base64_encode($binary), $options);
+        return $this->parseBase64Image(base64_encode($binary), $options);
     }
 
-    public function parseImageBase64(string $base64, OcrSpaceOptions $options): OcrSpaceResponse
+    public function parseBase64Image(string $base64, OcrSpaceOptions $options): OcrSpaceResponse
     {
         if ($options->fileType === null) {
             throw new \Exception('The file type is required for base64 images in the OcrSpaceOptions.');

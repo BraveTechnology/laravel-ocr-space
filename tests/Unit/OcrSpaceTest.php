@@ -22,7 +22,7 @@ it('parses a binary image', function (): void {
     $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
     $options = $options->fileType('image/png');
 
-    $response = $service->parseImageBinary(
+    $response = $service->parseBinaryImage(
         file_get_contents($filePath),
         $options,
     );
@@ -38,7 +38,7 @@ it('parses a base64 image', function (): void {
     $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
     $options = $options->fileType('image/png');
 
-    $response = $service->parseImageBase64(
+    $response = $service->parseBase64Image(
         base64_encode(file_get_contents($filePath)),
         $options,
     );
