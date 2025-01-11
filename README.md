@@ -117,6 +117,8 @@ You can pass options to the `parseImageFile`, `parseImageUrl`, `parseBase64Image
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
+use Codesmiths\LaravelOcrSpace\Enums\Language;
+use Codesmiths\LaravelOcrSpace\Enums\OcrSpaceEngine;
 
 // All possible options
 $options = OcrSpaceOptions::make()
