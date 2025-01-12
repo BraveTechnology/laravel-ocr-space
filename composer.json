@@ -1,7 +1,7 @@
 {
     "name": "cdsmths/laravel-ocr-space",
     "description": "OCR PDF's and images with the OCR.Space API from Laravel",
-    "version": "1.0.0",
+    "version": "1.0.0-alpha.1",
     "keywords": [
         "laravel",
         "laravel-ocr-space",
