@@ -136,6 +136,6 @@ $options = OcrSpaceOptions::make()
 
 # License / Credits
 
-Ocr.Space API is a product of [ocr.space](https://ocr.space/ocrapi). This package is not affiliated with ocr.space.
+This package our Codesmiths is not affiliated with [OCR.Space](https://ocr.space/ocrapi) and is not an official package. It is a wrapper around the OCR.Space API.
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
