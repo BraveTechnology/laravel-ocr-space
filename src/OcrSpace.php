@@ -6,6 +6,7 @@ namespace Codesmiths\LaravelOcrSpace;
 
 use Codesmiths\LaravelOcrSpace\Enums\InputType;
 use Codesmiths\LaravelOcrSpace\Exceptions\InvalidRequestException;
+use Codesmiths\LaravelOcrSpace\Exceptions\MissingOcrSpaceOptionException;
 use Codesmiths\LaravelOcrSpace\ValueObjects\OcrSpaceResponse;
 use Illuminate\Support\Facades\Http;
 
@@ -152,7 +153,7 @@ class OcrSpace
     public function parseBinaryImage(string $binary, OcrSpaceOptions $options): OcrSpaceResponse
     {
         if ($options->fileType === null) {
-            throw new \Exception('The file type is required for binary images in the options.');
+            throw MissingOcrSpaceOptionException::forProperty('fileType', 'when parsing binary images');
         }
 
         return $this->parseBase64Image(base64_encode($binary), $options);
@@ -161,7 +162,7 @@ class OcrSpace
     public function parseBase64Image(string $base64, OcrSpaceOptions $options): OcrSpaceResponse
     {
         if ($options->fileType === null) {
-            throw new \Exception('The file type is required for base64 images in the OcrSpaceOptions.');
+            throw MissingOcrSpaceOptionException::forProperty('fileType', 'when parsing base64 images');
         }
 
         return $this->parseImage(InputType::Base64, 'data:'.$options->fileType.';base64,'.$base64, $options);
