@@ -1,6 +1,6 @@
 ![laravel-ocr-space-social-card](https://github.com/user-attachments/assets/4333e2bc-1f5c-401f-9646-76bb57314057)
-# Laravel OCR Space
 
+# Laravel OCR Space
 
 Laravel OCR Space is a package that allows you to use the [OCR.Space](https://ocr.space/ocrapi) API in your Laravel application for Optical Character Recognition (OCR).
 
@@ -28,9 +28,10 @@ You can get a free api key from [ocr.space](https://ocr.space/ocrapi/freekey). T
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\Facades\LaravelOcrSpace;
+use Codesmiths\LaravelOcrSpace\OcrSpace;
 
 $filePath = 'path/to/image.jpg';
+$service = new OcrSpace;
 
 $result = $service->parseImageFile(
     $filePath,
@@ -44,15 +45,16 @@ dd($result);
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\Facades\LaravelOcrSpace;
+use Codesmiths\LaravelOcrSpace\OcrSpace;
 
 $imageUrl = 'https://example.com/image.jpg';
 
 $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions();
+$service = new OcrSpace;
 
 $result = $service->parseImageUrl(
-    url: $imageUrl,
-    options: OcrSpaceOptions::make(),
+    $imageUrl,
+    OcrSpaceOptions::make(),
 );
 
 dd($result);
@@ -62,9 +64,10 @@ dd($result);
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\Facades\LaravelOcrSpace;
+use Codesmiths\LaravelOcrSpace\OcrSpace;
 
 $base64Image = 'base64-encoded-image';
+$service = new OcrSpace;
 
 $result = $service->parseBase64Image(
     base64Image: $base64Image,
@@ -79,13 +82,14 @@ dd($result);
 ```php
 
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\Facades\LaravelOcrSpace;
+use Codesmiths\LaravelOcrSpace\OcrSpace;
 
 $binaryImage = file_get_contents('path/to/image.jpg');
+$service = new OcrSpace;
 
 // File type is required for binary images
 $options = OcrSpaceOptions::make()
-    ->fileType('jpg');
+    ->fileType('image/jpg');
 
 $result = $service->parseBinaryImage(
     $binaryImage,
@@ -99,10 +103,11 @@ dd($result);
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\Facades\LaravelOcrSpace;
+use Codesmiths\LaravelOcrSpace\OcrSpace;
 use Codesmiths\LaravelOcrSpace\Enums\InputType;
 
 $filePath = 'path/to/image.jpg';
+$service = new OcrSpace;
 
 $result = $service->parseImage(
     InputType::File

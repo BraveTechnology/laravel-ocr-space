@@ -6,8 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Codesmiths\LaravelOcrSpace\OcrSpace
- *
- *  */
+ */
 class OcrSpace extends Facade
 {
     /**
@@ -15,6 +14,6 @@ class OcrSpace extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return \Codesmiths\LaravelOcrSpace\OcrSpace::class;
+        return 'ocrspace';
     }
 }

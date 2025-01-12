@@ -12,6 +12,10 @@ class LaravelOcrSpaceServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/ocr-space.php', 'ocr-space');
+
+        $this->app->singleton('ocrspace', function ($app) {
+            return new \Codesmiths\LaravelOcrSpace\OcrSpace;
+        });
     }
 
     /**
