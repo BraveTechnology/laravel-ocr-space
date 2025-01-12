@@ -14,6 +14,6 @@ class OcrSpace extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return 'ocrspace';
+        return \Codesmiths\LaravelOcrSpace\OcrSpace::class;
     }
 }

@@ -21,7 +21,7 @@ class OcrSpaceResponse
         private readonly ?array $errorMessages,
         private readonly ?string $errorDetails,
         private readonly int $processingTimeInMilliseconds,
-        private readonly ?string $searchablePDFURL,
+        private readonly ?string $searchablePdfUrl
     ) {}
 
     /**
@@ -84,7 +84,7 @@ class OcrSpaceResponse
         return $this->OCRExitCode;
     }
 
-    public function isErroredOnProcessing(): bool
+    public function getIsErroredOnProcessing(): bool
     {
         return $this->isErroredOnProcessing;
     }
@@ -107,14 +107,14 @@ class OcrSpaceResponse
         return $this->processingTimeInMilliseconds;
     }
 
-    public function getSearchablePDFURL(): ?string
+    public function getSearchablePdfUrl(): ?string
     {
-        return $this->searchablePDFURL;
+        return $this->searchablePdfUrl;
     }
 
-    public function hasSearchablePDFURL(): bool
+    public function hasSearchablePdfUrl(): bool
     {
-        return $this->searchablePDFURL !== null;
+        return $this->searchablePdfUrl !== null;
     }
 
     public function hasError(): bool

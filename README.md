@@ -28,12 +28,11 @@ You can get a free api key from [ocr.space](https://ocr.space/ocrapi/freekey). T
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\OcrSpace;
+use Codesmiths\LaravelOcrSpace\Facades\OcrSpace;
 
 $filePath = 'path/to/image.jpg';
-$service = new OcrSpace;
 
-$result = $service->parseImageFile(
+$result = OcrSpace::parseImageFile(
     $filePath,
     OcrSpaceOptions::make(),
 );
@@ -45,14 +44,13 @@ dd($result);
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\OcrSpace;
+use Codesmiths\LaravelOcrSpace\Facades\OcrSpace;
 
 $imageUrl = 'https://example.com/image.jpg';
 
 $options = new \Codesmiths\LaravelOcrSpace\OcrSpaceOptions();
-$service = new OcrSpace;
 
-$result = $service->parseImageUrl(
+$result = OcrSapce::parseImageUrl(
     $imageUrl,
     OcrSpaceOptions::make(),
 );
@@ -64,14 +62,13 @@ dd($result);
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\OcrSpace;
+use Codesmiths\LaravelOcrSpace\Facades\OcrSpace;
 
-$base64Image = 'base64-encoded-image';
-$service = new OcrSpace;
+$base64Image = 'base64 encoded image';
 
-$result = $service->parseBase64Image(
-    base64Image: $base64Image,
-    options: OcrSpaceOptions::make(),
+$result = OcrSpace::parseBase64Image(
+    $base64Image,
+    OcrSpaceOptions::make(),
 );
 
 dd($result);
@@ -82,16 +79,15 @@ dd($result);
 ```php
 
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\OcrSpace;
+use Codesmiths\LaravelOcrSpace\Facades\OcrSpace;
 
 $binaryImage = file_get_contents('path/to/image.jpg');
-$service = new OcrSpace;
 
 // File type is required for binary images
 $options = OcrSpaceOptions::make()
     ->fileType('image/jpg');
 
-$result = $service->parseBinaryImage(
+$result = OcrSpace::parseBinaryImage(
     $binaryImage,
     $options,
 );
@@ -103,13 +99,12 @@ dd($result);
 
 ```php
 use Codesmiths\LaravelOcrSpace\OcrSpaceOptions;
-use Codesmiths\LaravelOcrSpace\OcrSpace;
+use Codesmiths\LaravelOcrSpace\Facades\OcrSpace;
 use Codesmiths\LaravelOcrSpace\Enums\InputType;
 
 $filePath = 'path/to/image.jpg';
-$service = new OcrSpace;
 
-$result = $service->parseImage(
+$result = OcrSpace::parseImage(
     InputType::File
     $filePath,
     OcrSpaceOptions::make(),
@@ -139,6 +134,23 @@ $options = OcrSpaceOptions::make()
         ->isTable(true)
         ->OCREngine(OcrSpaceEngine::Engine1);
 
+```
+
+### Response
+
+All methods return an instance of `Codesmiths\LaravelOcrSpace\OcrSpaceResponse` which has the following methods:
+
+```php
+$response->getParsedResults(); // Returns an Collection `ParsedResult`
+$response->getOCRExitCode(); // Returns the exit code
+$response->getIsErroredOnProcessing(); // Returns a boolean
+$response->getErrorMessage(); // Returns the error message
+$response->getErrorMessageDetails(); // Returns the error message details
+$response->getProcessingTimeInMilliseconds(); // Returns the processing time in milliseconds
+$response->getSearchablePdfUrl(); // Returns the searchable pdf url
+$response->hasSearchablePdfUrl(); // Returns if the response has a searchable pdf url
+$response->hasError(); // Returns if the response has an error
+$repsonse->hasParsedResults(); // Returns if the response has parsed results
 ```
 
 # License / Credits
