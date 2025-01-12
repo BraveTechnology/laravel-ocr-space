@@ -2,7 +2,7 @@
 
 namespace Codesmiths\LaravelOcrSpace\Tests;
 
-use Codesmiths\LaravelOcrSpace\OcrSpaceServiceProvider;
+use Codesmiths\LaravelOcrSpace\LaravelOcrSpaceServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Http;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -29,7 +29,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            OcrSpaceServiceProvider::class,
+            LaravelOcrSpaceServiceProvider::class,
         ];
     }
 

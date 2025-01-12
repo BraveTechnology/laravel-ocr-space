@@ -4,7 +4,7 @@ namespace Codesmiths\LaravelOcrSpace;
 
 use Illuminate\Support\ServiceProvider;
 
-class OcrSpaceServiceProvider extends ServiceProvider
+class LaravelOcrSpaceServiceProvider extends ServiceProvider
 {
     /**
      * Register the application services.
