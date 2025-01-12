@@ -1,4 +1,6 @@
+![laravel-ocr-space-social-card](https://github.com/user-attachments/assets/4333e2bc-1f5c-401f-9646-76bb57314057)
 # Laravel OCR Space
+
 
 Laravel OCR Space is a package that allows you to use the [OCR.Space](https://ocr.space/ocrapi) API in your Laravel application for Optical Character Recognition (OCR).
 
