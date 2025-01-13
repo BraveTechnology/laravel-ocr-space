@@ -24,6 +24,12 @@ php artisan vendor:publish --provider="Codesmiths\LaravelOcrSpace\LaravelOcrSpac
 
 You can get a free api key from [ocr.space](https://ocr.space/ocrapi/freekey). This key is required to use the package.
 
+You should add this key to your `.env`:
+
+```
+OCR_SPACE_API_KEY="YOUR API KEY"
+```
+
 ### Parsing an Image file
 
 ```php
