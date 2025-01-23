@@ -9,7 +9,7 @@ Laravel OCR Space is a package that allows you to use the [OCR.Space](https://oc
 You can install the package via composer:
 
 ```bash
-composer require cdsmiths/laravel-ocr-space
+composer require cdsmths/laravel-ocr-space
 ```
 
 You can publish the config file with:
