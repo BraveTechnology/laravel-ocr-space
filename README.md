@@ -15,7 +15,7 @@ composer require cdsmths/laravel-ocr-space
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --provider="Codesmiths\LaravelOcrSpace\LaravelOcrSpaceServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Codesmiths\LaravelOcrSpace\LaravelOcrSpaceServiceProvider" --tag="laravel-ocr-space"
 ```
 
 ## Usage
