@@ -4,6 +4,7 @@ namespace Codesmiths\LaravelOcrSpace\Enums;
 
 enum Language: string
 {
+    case Auto = 'auto';
     case Arabic = 'ara';
     case Bulgarian = 'bul';
     case ChineseSimplified = 'chs';
