@@ -1,7 +1,7 @@
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/cdsmths/laravel-ocr-space .svg?style=flat-square)](https://packagist.org/packages/cdsmths/laravel-ocr-space)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space /actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/cdsmths/laravel-ocr-space.svg?style=flat-square)](https://packagist.org/packages/cdsmths/laravel-ocr-space)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space /actions?query=workflow%3Atests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/formats.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space/actions?query=workflow%3A"formats"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/cdsmths/laravel-ocr-space.svg?style=flat-square)](https://packagist.org/packages/cdsmths/laravel-ocr-space)
 
 ![laravel-ocr-space-social-card](https://github.com/user-attachments/assets/4333e2bc-1f5c-401f-9646-76bb57314057)
