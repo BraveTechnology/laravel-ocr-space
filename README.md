@@ -1,6 +1,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/cdsmths/laravel-ocr-space.svg?style=flat-square)](https://packagist.org/packages/cdsmths/laravel-ocr-space)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space /actions?query=workflow%3Atests+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space/actions/workflows/tests.yml)
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/cdsmths/laravel-ocr-space/formats.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/cdsmths/laravel-ocr-space/actions?query=workflow%3A"formats"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/cdsmths/laravel-ocr-space.svg?style=flat-square)](https://packagist.org/packages/cdsmths/laravel-ocr-space)
 
