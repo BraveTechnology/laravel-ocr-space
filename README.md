@@ -165,6 +165,22 @@ $response->hasError(); // Returns if the response has an error
 $response->hasParsedResults(); // Returns if the response has parsed results
 ```
 
+### Parsed Results
+
+If you want to get value from `getParsedResults()`, you can use the following methods:
+
+```php
+$parsedResults = $response->getParsedResults();
+
+$parsedResults->first()->getParsedText(), // Returns the parsed text from the first parsed result
+$parsedResults->first()->getTextOverlay(), // Returns the text overlay from the first parsed result
+$parsedResults->first()->getFileParseExitCode(), // Returns the file parse exit code from the first parsed result
+$parsedResults->first()->getErrorMessage(), // Returns the error message from the first parsed result
+$parsedResults->first()->getErrorDetails(), // Returns the error message details from the first parsed result
+$parsedResults->first()->getSerializedParsedText(), // Returns the serialized parsed text from the first parsed result
+```
+
+
 # License / Credits
 
 This package our Codesmiths is not affiliated with [OCR.Space](https://ocr.space/ocrapi) and is not an official package. It is a wrapper around the OCR.Space API.
