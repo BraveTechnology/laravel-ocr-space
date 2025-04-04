@@ -162,7 +162,7 @@ $response->getProcessingTimeInMilliseconds(); // Returns the processing time in 
 $response->getSearchablePdfUrl(); // Returns the searchable pdf url
 $response->hasSearchablePdfUrl(); // Returns if the response has a searchable pdf url
 $response->hasError(); // Returns if the response has an error
-$repsonse->hasParsedResults(); // Returns if the response has parsed results
+$response->hasParsedResults(); // Returns if the response has parsed results
 ```
 
 # License / Credits
