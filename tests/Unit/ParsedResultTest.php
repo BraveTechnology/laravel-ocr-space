@@ -57,7 +57,7 @@ it('handles valid TextOverlay in response data', function (): void {
                 ]
             ],
             'HasOverlay' => true,
-            'Message' => null,
+            'Message' => null
         ],
         'FileParseExitCode' => '1',
         'ParsedText' => 'Hello',
